@@ -19,7 +19,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
 
-
         <!-- Specify dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 

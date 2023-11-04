@@ -6,48 +6,51 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "reviews")
 public class Review {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "destination_id", referencedColumnName = "destination_id", nullable = false)
-    @JsonIgnore
-    private Destination destination;
-    @Column(name = "stars")
-    private int stars;
-    @Column(name = "review")
-    private String review;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  private int id;
 
-    public int getId() {
-        return id;
-    }
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "destination_id", referencedColumnName = "destination_id", nullable = false)
+  @JsonIgnore
+  private Destination destination;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  @Column(name = "stars")
+  private int stars;
 
-    public int getStars() {
-        return stars;
-    }
+  @Column(name = "review")
+  private String review;
 
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getReview() {
-        return review;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setReview(String review) {
-        this.review = review;
-    }
+  public int getStars() {
+    return stars;
+  }
 
-    public Destination getDestination() {
-        return destination;
-    }
+  public void setStars(int stars) {
+    this.stars = stars;
+  }
 
-    public void setDestination(Destination destination) {
-        this.destination = destination;
-    }
+  public String getReview() {
+    return review;
+  }
+
+  public void setReview(String review) {
+    this.review = review;
+  }
+
+  public Destination getDestination() {
+    return destination;
+  }
+
+  public void setDestination(Destination destination) {
+    this.destination = destination;
+  }
 }

@@ -7,15 +7,12 @@ import com.abiskar.crudApplication.Repositories.ReviewRepository;
 import com.abiskar.crudApplication.Requests.DestinationRequest;
 import com.abiskar.crudApplication.Requests.ReviewRequest;
 import jakarta.persistence.EntityNotFoundException;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class CrudService {
@@ -60,7 +57,7 @@ public class CrudService {
         return listOfReview;
     }
 
-    public Review updateReview(Long id,Review updatedReview){
+    public Review updateReview(Long id, @NotNull Review updatedReview){
         Review review = reviewRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Review with ID" + id + " not found."));
         

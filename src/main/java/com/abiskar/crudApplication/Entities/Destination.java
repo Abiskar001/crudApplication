@@ -5,47 +5,49 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Destination")
 public class Destination {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "destination_id")
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "destination_id")
+  private int id;
 
-    @Column(name = "name")
-    private String name;
-    @Column(name = "location")
-    private String location;
-    @Column(name = "imageURL")
-    private String imageURL;
+  @Column(name = "name")
+  private String name;
 
-    public int getId() {
-        return id;
-    }
+  @Column(name = "location")
+  private String location;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  @Column(name = "imageURL")
+  private String imageURL;
 
-    public String getName() {
-        return name;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getLocation() {
-        return location;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getImageURL() {
-        return imageURL;
-    }
+  public String getLocation() {
+    return location;
+  }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public String getImageURL() {
+    return imageURL;
+  }
+
+  public void setImageURL(String imageURL) {
+    this.imageURL = imageURL;
+  }
 }

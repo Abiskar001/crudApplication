@@ -3,11 +3,10 @@ import com.abiskar.crudApplication.Entities.Review;
 import com.abiskar.crudApplication.Requests.DestinationRequest;
 import com.abiskar.crudApplication.Requests.ReviewRequest;
 import com.abiskar.crudApplication.Service.CrudService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class CrudController {
