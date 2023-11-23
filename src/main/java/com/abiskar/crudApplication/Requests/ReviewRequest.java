@@ -2,6 +2,8 @@ package com.abiskar.crudApplication.Requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class ReviewRequest {
 
   private String destination;
@@ -53,5 +55,17 @@ public class ReviewRequest {
         + review
         + '\''
         + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    ReviewRequest that = (ReviewRequest) o;
+
+    if (stars != that.stars) return false;
+    if (!Objects.equals(destination, that.destination)) return false;
+      return Objects.equals(review, that.review);
   }
 }

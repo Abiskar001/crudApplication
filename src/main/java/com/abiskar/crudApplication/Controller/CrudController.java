@@ -38,7 +38,7 @@ public class CrudController {
         return ResponseEntity.ok(updatedReview);
     }
 
-    @DeleteMapping("delete{id}")
+    @DeleteMapping("delete/{id}")
     void deleteReview(@PathVariable Long id){
         crudService.deleteReview(id);
     }

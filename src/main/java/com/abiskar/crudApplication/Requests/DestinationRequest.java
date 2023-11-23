@@ -2,6 +2,8 @@ package com.abiskar.crudApplication.Requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class DestinationRequest {
   String name;
   String location;
@@ -53,5 +55,17 @@ public class DestinationRequest {
         + imageURL
         + '\''
         + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    DestinationRequest that = (DestinationRequest) o;
+
+    if (!Objects.equals(name, that.name)) return false;
+    if (!Objects.equals(location, that.location)) return false;
+      return Objects.equals(imageURL, that.imageURL);
   }
 }
