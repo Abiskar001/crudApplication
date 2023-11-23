@@ -116,8 +116,8 @@ class CrudControllerTest {
     mockMvc = MockMvcBuilders.standaloneSetup(crudController).build();
     mockMvc
         .perform(
-            MockMvcRequestBuilders.delete("/delete/{id}",id)
-                    .contentType(MediaType.APPLICATION_JSON))
+            MockMvcRequestBuilders.delete("/delete/{id}", id)
+                .contentType(MediaType.APPLICATION_JSON))
         .andExpect(MockMvcResultMatchers.status().isOk());
     Mockito.verify(crudService).deleteReview(id);
   }
